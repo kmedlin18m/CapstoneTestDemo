@@ -24,11 +24,25 @@ public class SeleniumTest {
 
         driver.get("https://anupdamoda.github.io/AceOnlineShoePortal/index.html");
 
+
     }
 
     @Test
-    void teststeps(){
+    void teststeps() throws InterruptedException {
+
         driver.findElement(By.xpath("//*[@id=\"menuToggle\"]/input")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"menu\"]/a[2]/li")).click();
+
+        driver.findElement(By.xpath("//*[@id=\"usr\"]")).sendKeys("kirsten");
+        driver.findElement(By.xpath("//*[@id=\"pwd\"]")).sendKeys("password");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id=\"second_form\"]/input")).click();
+
+        Thread.sleep(2000);
+
+        driver.close();
+
     }
 
 
